@@ -101,26 +101,57 @@ h2.search-form__fieldset-title {
 input.search-form__textfield {
   background-color: transparent;
   border: none;
-  height: 30px;
+  height: 27px;
   min-width: 225px;
   font-size: inherit;
   font-weight: inherit;
   font-family: inherit;
+  color: grey;
+  outline: none;
+}
+
+.input.search-form__textfield:has(:focus) {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
-  /* Сюда что ли? Текстовому полю нужно задать свойство appearance: none;. 
-  Так в разных браузерах будут нужные вам стили. Это трюк. appearance: none; */
+}
+
+.search-form__label-text {
+  margin-left: 24px; /* связано с гэп у следующего*/
 }
 
 .search-form__checkbox-list {
   margin-top: 0px;
+  display: flex;
+  align-items: center;
+  gap: 15px;  /* Это управляет основными чекбоксами, оно скрыто но все равно главное */
+}
+
+.search-form__label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .search-form__pseudo-checkbox {
-  /* Когда будете рисовать .search-form__pseudo-checkbox, учитывайте, что в нём появится 
-  элемент, который должен оказаться точно по центру. Если присмотритесь к макету, заметите,
-   что внутренний квадрат включённого чекбокса чуть меньше самого чекбокса. Это мы сверстаем 
-   отдельно следующим шагом.*/
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border-radius: 1px;
+  border-style: solid;
+  display: flex;
+}
+
+.search-form__pseudo-checkbox:hover::after {
+  background-color: white;
 }
 
 button.button.search-form__submit-button {
