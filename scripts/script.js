@@ -27,6 +27,23 @@ showPreloader(preloaderTmp, videoContainer);
 showPreloader(preloaderTmp, cardsContainer);
 mainMechanics(endpoint);
 
+// Подсвечивает первую карточку при загрузке страницы
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait for all cards to be loaded
+  mainMechanics(endpoint).then(() => {
+    // Select the first card after cards are appended
+    const firstCard = document.querySelector('.content__card-link');
+    
+    // Set focus-visible manually using focus() method
+    if (firstCard) {
+      setTimeout(() => {
+        firstCard.focus();
+      }, 100); // Small delay to ensure DOM is ready
+    }
+  });
+});
+
 // осуществляется поиск ✅
 form.onsubmit = (e) => {
   e.preventDefault();
