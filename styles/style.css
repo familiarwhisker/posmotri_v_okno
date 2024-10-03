@@ -43,7 +43,7 @@ ol {
   display: grid;
   grid-row-start: left;
   grid-template-columns: 60% 33%;
-  grid-template-rows: auto; /* Ограничила высоту дефолтной страницы. upd убрала*/
+  grid-template-rows: auto;
   column-gap: 22px;
   margin-top: 11%;
   margin-left: 2.4%;
@@ -63,12 +63,12 @@ ol {
 .result__video-container video {
   width: 100%;
   height: 100%;
-  object-fit: fill; /* Растянула видео на размер парент контейнера */
+  object-fit: fill;
 }
 
 .search-form {
   display: grid;
-  align-content: stretch; /* Если удалить это, ничего не меняется - возможно лишняя строчка */
+  align-content: stretch;
   grid-template-columns: 35% 33% 26.6%;
   grid-template-rows: auto;
   column-gap: 15px;
@@ -114,20 +114,28 @@ input.search-form__textfield {
   outline: none;
 }
 
+/* Я сделала так, как в уроке, а не в макете - там были противоречивые рекомендации */
+
 .search-form__label:has(:focus-visible) {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 }
 
 .search-form__label-text {
-  margin-left: 24px; /* связано с гэп у следующего*/
+  margin-left: 24px;
+}
+
+.search-form__label-text:hover {
+  text-decoration: underline solid 1px;
+  color: white;
+  text-underline-offset: 4px;
 }
 
 .search-form__checkbox-list {
   margin-top: 0px;
   display: flex;
   align-items: center;
-  gap: 15px;  /* Это управляет основными чекбоксами, оно скрыто но все равно главное */
+  gap: 15px;
 }
 
 .search-form__label {
@@ -164,11 +172,6 @@ input[type=checkbox]:checked + .search-form__pseudo-checkbox::before {
   font-size: 0px;
 }
 
-button.button.search-form__submit-button {
-  margin-top: 18px;
-  width: 100%;
-}
-
 .button {
   cursor: pointer;
   background-color: transparent;
@@ -191,11 +194,19 @@ button.button.search-form__submit-button {
   outline: none;
 }
 
+.button:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+button.button.search-form__submit-button {
+  margin-top: 18px;
+  width: 100%;
+}
+
 .more-button {
   width: 100%;
   margin-top: 32px;
 }
-
 
 .title {
   font-size: 75px;
@@ -234,12 +245,12 @@ img.content__video-card-thumbnail {
 }
 
 .content__list-item:not(:first-child) {
-  margin-top: 32px; /*Получилось, отступы всем кроме последнего))*/
+  margin-top: 32px;
 }
 
 .content__card-link {
   display: block;
-  text-decoration: none; /* Убирает подчеркивание */
+  text-decoration: none;
   margin: 2px;
   outline: none;
 }
@@ -247,7 +258,7 @@ img.content__video-card-thumbnail {
 .content__card-link:has(:hover) {
   text-decoration: underline solid 1px;
   color: white;
-  text-underline-offset: 4px
+  text-underline-offset: 4px;
 }
 
 .content__card-link:focus-visible {
@@ -277,6 +288,6 @@ img.content__video-card-thumbnail {
 }
 
 .content__video-card-description-container {
-  object-fit: fill;  /*Это здесь только из-за инструкции - оно ничего не поменяло*/
+  object-fit: fill;
 }
 
