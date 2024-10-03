@@ -30,9 +30,183 @@ blockquote,
 fieldset {
   margin: 0;
   padding: 0;
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 ul,
 ol {
   list-style: none;
 }
+
+.content {
+  width: 100%;
+  display: grid;
+  grid-row-start: left;
+  grid-template-columns: 60% 33%;
+  grid-template-rows: auto; /* Ограничила высоту дефолтной страницы. upd убрала*/
+  column-gap: 22px;
+  margin-top: 11%;
+  margin-left: 2.4%;
+}
+
+.result {
+  padding-top: 80px;
+}
+
+.result__video-container {
+  height: 386px;
+  width: 712px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.result__video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Растянула видео на размер парент контейнера */
+}
+
+.search-form {
+  display: grid;
+  align-content: stretch; /* Если удалить это, ничего не меняется - возможно лишняя строчка */
+  grid-template-columns: 35% 33% 26.6%;
+  grid-template-rows: auto;
+  column-gap: 15px;
+  background-color: transparent;
+}
+
+h2.search-form__fieldset-title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-form__fieldset {
+  border: none;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+input.search-form__textfield {
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  min-width: 225px;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  /* Сюда что ли? Текстовому полю нужно задать свойство appearance: none;. 
+  Так в разных браузерах будут нужные вам стили. Это трюк. appearance: none; */
+}
+
+.search-form__checkbox-list {
+  margin-top: 0px;
+}
+
+.search-form__pseudo-checkbox {
+  /* Когда будете рисовать .search-form__pseudo-checkbox, учитывайте, что в нём появится 
+  элемент, который должен оказаться точно по центру. Если присмотритесь к макету, заметите,
+   что внутренний квадрат включённого чекбокса чуть меньше самого чекбокса. Это мы сверстаем 
+   отдельно следующим шагом.*/
+}
+
+button.button.search-form__submit-button {
+  margin-top: 18px;
+  width: 100%;
+}
+
+.button {
+  cursor: pointer;
+  background-color: transparent;
+  border-style: solid;
+  border-radius: 1px;
+  border-color: white;
+  height: 38px;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.more-button {
+  width: 100%;
+  margin-top: 32px;
+}
+
+
+.title {
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70px;
+  font-family: 'Oswald';
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__video-card {
+  display: grid;
+  grid-template-columns: 51% 49%;
+  grid-template-rows: 107px;
+}
+
+.content__details {
+  width: 100%;
+  height: 100%;
+}
+
+img.content__video-card-thumbnail {
+  width: 100%;
+  object-fit: fill;
+}
+
+.content__list {
+  height: 302px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.content__list-item:not(:first-child) {
+  margin-top: 32px; /*Получилось, отступы всем кроме последнего))*/
+}
+
+.content__card-link {
+  text-decoration: none; /* Убирает подчеркивание */
+}
+
+.content__card-link_current {
+  text-decoration: none; /* Убирает подчеркивание */
+}
+
+.content__video-card-title {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Oswald';
+  text-transform: uppercase;
+  color: white;
+}
+
+.content__video-card-description {
+  color: white;
+}
+
+.content__video-card-description-container {
+  object-fit: fill;  /*Это здесь только из-за инструкции - оно ничего не поменяло*/
+}
+
