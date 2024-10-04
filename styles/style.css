@@ -13,9 +13,12 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', 'Times New Roman', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
 h1,
@@ -30,7 +33,7 @@ blockquote,
 fieldset {
   margin: 0;
   padding: 0;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', 'Times New Roman', sans-serif;
 }
 
 ul,
@@ -45,8 +48,8 @@ ol {
   grid-template-columns: 60% 33%;
   grid-template-rows: auto;
   column-gap: 22px;
-  margin-top: 11%;
-  margin-left: 2.4%;
+  justify-items: center;
+  align-items: center;
 }
 
 .result {
@@ -63,7 +66,7 @@ ol {
 .result__video-container video {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .search-form {
@@ -106,8 +109,10 @@ input.search-form__textfield {
   font-size: inherit;
   font-weight: inherit;
   font-family: inherit;
-  color: grey;
+  color: white;
   outline: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .input.search-form__textfield:has(:focus) {
@@ -117,15 +122,14 @@ input.search-form__textfield {
 /* Я сделала так, как в уроке, а не в макете - там были противоречивые рекомендации */
 
 .search-form__label:has(:focus-visible) {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  outline: 1px solid white;
 }
 
 .search-form__label-text {
-  margin-left: 24px;
+  margin-left: 5px;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline solid 1px;
   color: white;
   text-underline-offset: 4px;
@@ -135,12 +139,14 @@ input.search-form__textfield {
   margin-top: 0px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: space-around;
+  margin-left: -5px;
+  gap: 5px;
 }
 
 .search-form__label {
-  display: inline-block;
-  position: relative;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -149,7 +155,6 @@ input.search-form__textfield {
 }
 
 .search-form__pseudo-checkbox {
-  position: absolute;
   height: 20px;
   width: 20px;
   background-color: transparent;
@@ -195,7 +200,7 @@ input[type=checkbox]:checked + .search-form__pseudo-checkbox::before {
 }
 
 .button:active {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(84, 80, 80, 1);
 }
 
 button.button.search-form__submit-button {
@@ -212,7 +217,7 @@ button.button.search-form__submit-button {
   font-size: 75px;
   font-weight: 700;
   line-height: 70px;
-  font-family: 'Oswald';
+  font-family: 'Oswald', 'Times New Roman', sans-serif;
   text-transform: uppercase;
   margin-bottom: 20px;
   margin-top: 5px;
@@ -225,7 +230,6 @@ button.button.search-form__submit-button {
 .content__video-card {
   display: grid;
   grid-template-columns: 51% 49%;
-  grid-template-rows: 107px;
 }
 
 .content__details {
@@ -235,7 +239,7 @@ button.button.search-form__submit-button {
 
 img.content__video-card-thumbnail {
   width: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .content__list {
@@ -261,33 +265,34 @@ img.content__video-card-thumbnail {
   text-underline-offset: 4px;
 }
 
+.content__card-link:focus {
+  outline: none;
+}
+
 .content__card-link:focus-visible {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(84, 80, 80, 1);
 }
 
 .content__card-link_current {
   text-decoration: none;
-}
-
-.content__card-link_current:has(:focus) {
-  outline: none;
+  background-color: #545050 ;
 }
 
 .content__video-card-title {
   font-size: 30px;
   font-weight: 700;
-  font-family: 'Oswald';
+  font-family: 'Oswald', 'Times New Roman', sans-serif;
   text-transform: uppercase;
   color: white;
   margin-left: 3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
   color: white;
   margin-left: 3px;
-}
-
-.content__video-card-description-container {
-  object-fit: fill;
+  max-width: 200px;
 }
 

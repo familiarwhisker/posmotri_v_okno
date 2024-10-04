@@ -27,18 +27,18 @@ showPreloader(preloaderTmp, videoContainer);
 showPreloader(preloaderTmp, cardsContainer);
 mainMechanics(endpoint);
 
-// Пришлось. Не придумала лучше =) Подсвечивает первую карточку при загрузке страницы
+// Upd убрала. Пришлось. Не придумала лучше =) Подсвечивает первую карточку при загрузке страницы
 
-document.addEventListener('DOMContentLoaded', function() {
-  mainMechanics(endpoint).then(() => {
-    const firstCard = document.querySelector('.content__card-link');
-    if (firstCard) {
-      setTimeout(() => {
-        firstCard.focus();
-      }, 300);
-    }
-  });
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//  mainMechanics(endpoint).then(() => {
+//    const firstCard = document.querySelector('.content__card-link');
+//    if (firstCard) {
+//      setTimeout(() => {
+//        firstCard.focus();
+//      }, 300);
+//    }
+//  });
+//});
 
 // осуществляется поиск ✅
 form.onsubmit = (e) => {
