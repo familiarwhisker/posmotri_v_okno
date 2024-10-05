@@ -76,7 +76,7 @@ ol {
   grid-template-columns: auto auto auto;
   justify-content: space-around;
   grid-template-rows: auto;
-  column-gap: 40px;
+  column-gap: 39px;
   background-color: transparent;
 }
 
@@ -138,7 +138,7 @@ input.search-form__textfield {
 }
 
 .search-form__checkbox-list {
-  margin-top: 8px;
+  margin-top: 6px;
   display: flex;
   align-items: center;
   gap: 15px;
