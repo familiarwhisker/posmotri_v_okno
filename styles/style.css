@@ -216,8 +216,11 @@ button.button.search-form__submit-button {
 }
 
 .more-button {
-  width: 100%;
+  width: 98%;
   margin-top: 32px;
+  margin-bottom: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .title {
